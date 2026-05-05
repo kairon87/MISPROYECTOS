@@ -16,9 +16,9 @@ jobs:
       issues: write
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
-      - uses: anomalyco/opencode/github@v0.3.0
+      - uses: anomalyco/opencode/github@latest
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
