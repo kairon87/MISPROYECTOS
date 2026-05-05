@@ -1,0 +1,12 @@
+# robots.txt – CASTRO Data Consulting
+# https://castrodataconsulting.com/
+
+User-agent: *
+Allow: /
+
+# Block access to git metadata (security)
+Disallow: /.git/
+Disallow: /.github/
+
+# Sitemap location
+Sitemap: https://castrodataconsulting.com/sitemap.xml
