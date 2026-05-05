@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════
-   CASTRO Data Consulting v2 — Premium CSS
-   Aesthetic: Dark luxury editorial + data-driven
+   CASTRO Data Consulting — Consultoría de Análisis
+   de Datos para Empresas en España y Latinoamérica
    ══════════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1033,6 +1033,54 @@ body:has(button:hover) .cursor-follower { width: 44px; height: 44px; border-colo
   gap: 0.5rem;
 }
 .footer__bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+/* ── ACCESSIBILITY / FOCUS ───────────────────────── */
+/* Visible focus rings para cumplir WCAG 2.1 AA (mejora Lighthouse) */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── PERFORMANCE / CORE WEB VITALS ───────────────── */
+/* Secciones fuera del viewport inicial pueden renderizarse lazy */
+.valor,
+.servicios,
+.impacto,
+.clientes,
+.sobre,
+.proceso,
+.contacto,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* ── SKIP TO CONTENT (accesibilidad) ─────────────── */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
 
 /* ── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 1024px) {
