@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════════════════
-   CASTRO Data Consulting v2 — script.js
+   CASTRO Data Consulting v3 — script.js
+   Consultoría empresarial + Asesoría académica
    ══════════════════════════════════════════════════ */
 'use strict';
 
@@ -218,6 +219,31 @@ if (contactoCanvas) {
   }
   drawWaves();
 }
+
+// ── Form tabs (empresa / academia) ───────────────────
+const formTabs = document.querySelectorAll('.form__tab');
+const fieldsEmpresa = document.querySelectorAll('.form__field--empresa');
+const fieldsAcademia = document.querySelectorAll('.form__field--academia');
+const submitBtn = document.querySelector('.btn--submit');
+
+formTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    formTabs.forEach(t => {
+      t.classList.remove('form__tab--active', 'form__tab--active-academia');
+    });
+    const isAcademia = tab.dataset.tab === 'academia';
+    tab.classList.add(isAcademia ? 'form__tab--active-academia' : 'form__tab--active');
+
+    fieldsEmpresa.forEach(f => { f.style.display = isAcademia ? 'none' : ''; });
+    fieldsAcademia.forEach(f => { f.style.display = isAcademia ? '' : 'none'; });
+
+    if (submitBtn) {
+      submitBtn.style.background = isAcademia ? 'var(--teal)' : '';
+      const span = submitBtn.querySelector('span');
+      if (span) span.textContent = isAcademia ? 'Solicitar asesoría académica' : 'Solicitar consulta inicial';
+    }
+  });
+});
 
 // ── Form submit ──────────────────────────────────────
 const form = document.getElementById('contactoForm');
