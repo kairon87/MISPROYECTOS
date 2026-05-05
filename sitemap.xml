@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.castrodataconsulting.com/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <!-- Hreflang alternates -->
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://www.castrodataconsulting.com/" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://www.castrodataconsulting.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.castrodataconsulting.com/" />
+  </url>
+
+  <!-- Anclas de sección (para motores de búsqueda avanzados) -->
+  <url>
+    <loc>https://www.castrodataconsulting.com/#servicios</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.castrodataconsulting.com/#sobre</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.castrodataconsulting.com/#contacto</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

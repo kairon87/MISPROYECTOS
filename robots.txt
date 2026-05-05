@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.castrodataconsulting.com/sitemap.xml
+
+# Crawl-delay (opcional — evita sobrecarga del servidor)
+Crawl-delay: 1
