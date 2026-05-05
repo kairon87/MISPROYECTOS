@@ -24,6 +24,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "opencode-bot"
+          git config --global user.email "opencode-bot@users.noreply.github.com"
+
       - name: Run OpenCode
         uses: anomalyco/opencode/github@latest
         env:
