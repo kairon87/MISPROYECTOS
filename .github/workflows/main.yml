@@ -6,34 +6,25 @@ on:
 
 jobs:
   opencode:
-    if: contains(github.event.comment.body, '/opencode')
+    # 🔒 SOLO EJECUTA SI ES EXPLÍCITO
+    if: contains(github.event.comment.body, '/opencode run')
+
     runs-on: ubuntu-latest
 
     permissions:
-      id-token: write
       contents: write
       issues: write
       pull-requests: write
+      id-token: write
 
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Configure Git identity
-        run: |
-          git config --global user.name "opencode-bot"
-          git config --global user.email "opencode-bot@users.noreply.github.com"
-
-      - name: Run OpenCode
+      - name: Run OpenCode (controlled mode)
         uses: anomalyco/opencode/github@latest
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          model: anthropic/claude-sonnet-4-6
+          model: anthropic/claude-sonnet-4-20250514
           use_github_token: true
