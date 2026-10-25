@@ -536,35 +536,35 @@
             </div>
           </div>
           <div class="contacto__right reveal">
-            <form class="form" id="contactoForm">
+            <form class="form" id="contactoForm" action="https://formspree.io/f/mdeeenzl" method="POST">
               <h3>Solicitar diagnóstico gratuito</h3>
               <div class="form__row">
                 <div class="fg">
-                  <label>Nombre</label>
-                  <input type="text" placeholder="Su nombre" required />
+                  <label for="contactoNombre">Nombre</label>
+                  <input id="contactoNombre" type="text" name="nombre" placeholder="Su nombre" autocomplete="name" required />
                 </div>
                 <div class="fg">
-                  <label>Empresa</label>
-                  <input type="text" placeholder="Su empresa" />
+                  <label for="contactoEmpresa">Empresa</label>
+                  <input id="contactoEmpresa" type="text" name="empresa" placeholder="Su empresa" autocomplete="organization" />
                 </div>
               </div>
               <div class="fg">
-                <label>Email</label>
-                <input type="email" placeholder="su@empresa.com" required />
+                <label for="contactoEmail">Email</label>
+                <input id="contactoEmail" type="email" name="email" placeholder="su@empresa.com" autocomplete="email" required />
               </div>
               <div class="form__row">
                 <div class="fg">
-                  <label>País</label>
-                  <select>
-                    <option value="" disabled selected>Seleccione</option>
+                  <label for="contactoPais">País</label>
+                  <select id="contactoPais" name="pais">
+                    <option value="" selected>Seleccione</option>
                     <option>Chile</option><option>España</option><option>México</option>
                     <option>Colombia</option><option>Argentina</option><option>Perú</option><option>Otro</option>
                   </select>
                 </div>
                 <div class="fg">
-                  <label>Servicio</label>
-                  <select>
-                    <option value="" disabled selected>Seleccione</option>
+                  <label for="contactoServicio">Servicio</label>
+                  <select id="contactoServicio" name="servicio">
+                    <option value="" selected>Seleccione</option>
                     <option>Inteligencia de Negocios</option>
                     <option>Analítica Avanzada</option>
                     <option>Optimización y Eficiencia</option>
@@ -573,16 +573,18 @@
                 </div>
               </div>
               <div class="fg">
-                <label>¿Cuál es su desafío?</label>
-                <textarea rows="3" placeholder="Cuéntenos brevemente su situación..." required></textarea>
+                <label for="contactoDesafio">¿Cuál es su desafío?</label>
+                <textarea id="contactoDesafio" name="mensaje" rows="3" placeholder="Cuéntenos brevemente su situación..." required></textarea>
               </div>
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;width:1px;height:1px" />
               <button type="submit" class="btn-submit">Solicitar diagnóstico gratuito →</button>
               <p class="form__note">Sin compromiso · Respuesta en &lt;24h · 100% confidencial</p>
+              <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
-            <div class="form-ok" id="formOk">
+            <div class="form-ok" id="formOk" role="status" aria-live="polite">
               <div class="form-ok__ico">✓</div>
               <h3>¡Mensaje recibido!</h3>
-              <p>Nos pondremos en contacto en menos de 24 horas hábiles.</p>
+              <p>Su solicitud se ha enviado correctamente. Nos pondremos en contacto en menos de 24 horas hábiles.</p>
             </div>
           </div>
         </div>
