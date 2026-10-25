@@ -166,19 +166,55 @@ const barObs = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('.bar-item').forEach(el => barObs.observe(el));
 
-// ── Form ─────────────────────────────────────────
+// ── Formspree contact form ────────────────────────
 const form = document.getElementById('contactoForm');
 const formOk = document.getElementById('formOk');
+const formStatus = document.getElementById('formStatus');
+
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!form.reportValidity()) return;
+
     const btn = form.querySelector('.btn-submit');
+    const originalText = btn.textContent;
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-    setTimeout(() => {
+    if (formStatus) {
+      formStatus.textContent = 'Enviando su solicitud…';
+      formStatus.style.color = '';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      let result = {};
+      try { result = await response.json(); } catch (_) {}
+
+      if (!response.ok) {
+        const detail = Array.isArray(result.errors)
+          ? result.errors.map(item => item.message).filter(Boolean).join(' ')
+          : '';
+        throw new Error(detail || 'Formspree no pudo aceptar la solicitud. Compruebe la configuración del formulario.');
+      }
+
+      form.reset();
       form.style.display = 'none';
-      formOk.classList.add('active');
-    }, 1200);
+      if (formOk) formOk.classList.add('active');
+    } catch (error) {
+      if (formStatus) {
+        formStatus.textContent = error.message || 'No se pudo enviar el mensaje. Revise su conexión e inténtelo de nuevo.';
+        formStatus.style.color = '#b42318';
+      } else {
+        alert(error.message || 'No se pudo enviar el mensaje. Inténtelo de nuevo.');
+      }
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
   });
 }
 
