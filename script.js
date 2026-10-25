@@ -31,13 +31,28 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   document.body.style.overflow = '';
 }));
 
-// ── Smooth scroll ────────────────────────────────
+// ── Smooth scroll: diagnosis CTA opens the actual form ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (!t) return;
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const section = document.querySelector(href);
+    if (!section) return;
     e.preventDefault();
-    window.scrollTo({ top: t.offsetTop - header.offsetHeight - 16, behavior: 'smooth' });
+
+    // Any diagnosis/contact CTA should take visitors directly to the form,
+    // rather than stopping at the top of the contact section.
+    const target = href === '#contacto' ? (document.getElementById('contactoForm') || section) : section;
+    const headerHeight = header ? header.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 18;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+
+    if (window.location.hash !== href) history.replaceState(null, '', href);
+    if (nav && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      if (hamburger) hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   });
 });
 
