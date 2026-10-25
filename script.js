@@ -147,7 +147,7 @@ function animateHeroStats() {
     const step = target / 40;
     const interval = setInterval(() => {
       current = Math.min(current + step, target);
-      el.textContent = Math.floor(current);
+      el.textContent = Math.floor(current).toLocaleString('es-ES');
       if (current >= target) clearInterval(interval);
     }, 40);
   });
@@ -176,7 +176,7 @@ const metricObs = new IntersectionObserver(entries => {
         const step = target / 60;
         const interval = setInterval(() => {
           current = Math.min(current + step, target);
-          counter.textContent = Math.floor(current);
+          counter.textContent = Math.floor(current).toLocaleString('es-ES');
           if (current >= target) clearInterval(interval);
         }, 20);
       }
