@@ -361,10 +361,13 @@ body:has(button:hover) .cursor-follower { width: 44px; height: 44px; border-colo
 .hero__stats {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1.35rem;
   animation: fadeUp 0.9s 0.8s var(--ease-out) both;
 }
-.hero__stat { text-align: left; }
+.hero__stat { text-align: left; flex: 1 1 130px; min-width: 0; }
+.hero__stat-label { max-width: 150px; line-height: 1.5; }
+.contacto__ch-icon--whatsapp { color: #25D366; }
 .hero__stat-num {
   display: inline-block;
   font-family: var(--font-display);
@@ -1070,7 +1073,11 @@ body:has(button:hover) .cursor-follower { width: 44px; height: 44px; border-colo
   .proceso__step:last-child { border-bottom: 1px solid var(--border); }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .form__row { grid-template-columns: 1fr; }
-  .hero__stats { gap: 1.5rem; }
+  .hero__stats { gap: 1.25rem; align-items: flex-start; }
+  .hero__stat-divider { display: none; }
+  .hero__stat { flex: 1 1 calc(50% - 1rem); }
+  .hero__stat-num { font-size: 2rem; }
+  .hero__stat-label { font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {
