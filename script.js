@@ -217,6 +217,11 @@ if (form) {
         throw new Error(detail || 'Formspree no pudo aceptar la solicitud. Compruebe la configuración del formulario.');
       }
 
+      trackGA4Event('generate_lead', {
+        form_id: form.id || 'contactoForm',
+        service_category: form.querySelector('[name="servicio"]')?.value || 'not_selected',
+        country: form.querySelector('[name="pais"]')?.value || 'not_selected'
+      });
       form.reset();
       form.style.display = 'none';
       if (formOk) formOk.classList.add('active');
@@ -233,6 +238,39 @@ if (form) {
   });
 }
 
+
+// ── GA4: medición de contactos y captación ─────────────
+function trackGA4Event(eventName, params = {}) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, {
+    page_path: window.location.pathname,
+    ...params
+  });
+}
+
+// Registrar inicio del formulario una sola vez por carga de página.
+if (form) {
+  const firstField = form.querySelector('input:not([type="hidden"]), select, textarea');
+  if (firstField) {
+    firstField.addEventListener('focus', () => {
+      if (form.dataset.ga4Started === 'true') return;
+      form.dataset.ga4Started = 'true';
+      trackGA4Event('form_start', { form_id: form.id || 'contactoForm' });
+    }, { once: true });
+  }
+}
+
+// Medir clics en enlaces públicos de WhatsApp y correo, sin capturar datos escritos.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (/^https?:\/\/wa\.me\//i.test(href)) {
+    trackGA4Event('whatsapp_click', { link_url: href.split('?')[0] });
+  } else if (/^mailto:/i.test(href)) {
+    trackGA4Event('email_click', { link_url: href.split('?')[0] });
+  }
+});
 
 /* ══════════════════════════════════════════════
    VANE — Smart Multilingual Assistant
