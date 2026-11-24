@@ -80,6 +80,19 @@
     .biz-bridge__link{flex:0 0 auto;display:inline-flex;align-items:center;gap:12px;padding:14px 18px;border-radius:10px;background:#1d4ed8;color:#fff;text-decoration:none;font-weight:700}
     .biz-bridge__link:hover{background:#1e40af}
     @media(max-width:700px){.biz-bridge__inner{align-items:flex-start;flex-direction:column;padding:22px}.biz-bridge__link{width:100%;justify-content:center}}
+
+    .audience-hub{padding:64px 0;background:#fff;color:#10213d}
+    .audience-hub__head{max-width:760px;margin:0 auto 28px;text-align:center}
+    .audience-hub__head h2{margin:0 0 12px;font-family:Fraunces,serif;font-size:clamp(27px,4vw,38px);line-height:1.15}
+    .audience-hub__head p{margin:0;color:#52627a;line-height:1.7}
+    .audience-hub__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .audience-hub__card{display:block;padding:21px;border:1px solid #dbe4f0;border-radius:15px;background:#f8fafc;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+    .audience-hub__card:hover,.audience-hub__card:focus-visible{transform:translateY(-3px);border-color:#60a5fa;outline:none}
+    .audience-hub__card strong{display:block;margin-bottom:8px;color:#10213d;font-size:16px}
+    .audience-hub__card span{display:block;color:#52627a;font-size:13px;line-height:1.65}
+    @media(max-width:900px){.audience-hub__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.audience-hub{padding:48px 0}.audience-hub__grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){.audience-hub__card{transition:none}.audience-hub__card:hover{transform:none}}
   </style>
 </head>
 <body>
