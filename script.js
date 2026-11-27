@@ -278,7 +278,7 @@ document.addEventListener('click', (event) => {
    ══════════════════════════════════════════════ */
 
 const VB_WA   = 'https://wa.me/56982774194';
-const VB_MAIL = 'mailto:spssasesores@gmail.com';
+const VB_MAIL = 'mailto:info@spssasesores.com';
 
 // ── Language detection ────────────────────────
 function vbDetectLang(text) {
@@ -302,15 +302,15 @@ function vbDetectLang(text) {
 // ── Translations ──────────────────────────────
 const T = {
   greeting: {
-    es: '¡Hola! Soy <strong>Vane</strong>, asistente de <strong>AC& Data Consulting</strong>.<br>¿En qué te puedo ayudar hoy?',
-    en: 'Hello! I\'m <strong>Vane</strong>, assistant at <strong>AC& Data Consulting</strong>.<br>How can I help you today?',
-    pt: 'Olá! Sou a <strong>Vane</strong>, assistente da <strong>AC& Data Consulting</strong>.<br>Como posso ajudar?',
-    fr: 'Bonjour! Je suis <strong>Vane</strong>, assistante chez <strong>AC& Data Consulting</strong>.<br>Comment puis-je vous aider?',
-    de: 'Hallo! Ich bin <strong>Vane</strong>, Assistentin bei <strong>AC& Data Consulting</strong>.<br>Wie kann ich Ihnen helfen?',
-    it: 'Ciao! Sono <strong>Vane</strong>, assistente di <strong>AC& Data Consulting</strong>.<br>Come posso aiutarti?',
-    zh: '您好！我是<strong>Vane</strong>，AC& Data Consulting的助理。<br>我能为您做什么？',
-    ar: 'مرحباً! أنا <strong>Vane</strong>، مساعدة AC& Data Consulting.<br>كيف يمكنني مساعدتك؟',
-    ru: 'Привет! Я <strong>Vane</strong>, ассистент AC& Data Consulting.<br>Чем могу помочь?',
+    es: '¡Hola! Soy <strong>Vane</strong>, asistente de <strong>SPSSASESORES</strong>.<br>¿En qué te puedo ayudar hoy?',
+    en: 'Hello! I\'m <strong>Vane</strong>, assistant at <strong>SPSSASESORES</strong>.<br>How can I help you today?',
+    pt: 'Olá! Sou a <strong>Vane</strong>, assistente da <strong>SPSSASESORES</strong>.<br>Como posso ajudar?',
+    fr: 'Bonjour! Je suis <strong>Vane</strong>, assistante chez <strong>SPSSASESORES</strong>.<br>Comment puis-je vous aider?',
+    de: 'Hallo! Ich bin <strong>Vane</strong>, Assistentin bei <strong>SPSSASESORES</strong>.<br>Wie kann ich Ihnen helfen?',
+    it: 'Ciao! Sono <strong>Vane</strong>, assistente di <strong>SPSSASESORES</strong>.<br>Come posso aiutarti?',
+    zh: '您好！我是<strong>Vane</strong>，SPSSASESORES的助理。<br>我能为您做什么？',
+    ar: 'مرحباً! أنا <strong>Vane</strong>، مساعدة SPSSASESORES.<br>كيف يمكنني مساعدتك؟',
+    ru: 'Привет! Я <strong>Vane</strong>, ассистент SPSSASESORES.<br>Чем могу помочь?',
   },
   chips: {
     es: ['Precios','Tesis','Empresas','Plazos','Pago','¿Dónde operan?'],
@@ -340,8 +340,8 @@ const T = {
 const VB_KB = [
   {
     keys: ['precio','costo','cuánto','cuanto','valor','tarifa','pricing','price','cost','rate','fee','preço','quanto','tarif','prix','preis','prezzo','价格','الأسعار','цены'],
-    es: `Nuestras tarifas se adaptan a cada proyecto:<br><br><strong>🎓 Estudiantes / Tesis:</strong> Desde <strong>45€ hasta 500€</strong> según la magnitud. Superamos cualquier oferta del mercado.<br><br><strong>🏢 Empresas:</strong> Propuesta personalizada con respuesta prioritaria e inmediata.<br><br>¿Le enviamos una cotización sin costo?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
-    en: `Our rates adapt to each project:<br><br><strong>🎓 Students / Thesis:</strong> From <strong>€45 to €500</strong> depending on complexity. We beat any competitor.<br><br><strong>🏢 Enterprise:</strong> Custom proposal with immediate priority response.<br><br>Want a free quote?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
+    es: `Nuestras tarifas se adaptan a cada proyecto:<br><br><strong>🎓 Estudiantes / Tesis:</strong> Presupuesto personalizado según la complejidad, los datos y los entregables. No ofrecemos tarifas estándar sin revisar el alcance.<br><br><strong>🏢 Empresas:</strong> Propuesta personalizada según el alcance y los plazos acordados.<br><br>¿Le enviamos una cotización sin costo?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
+    en: `Our rates adapt to each project:<br><br><strong>🎓 Students / Thesis:</strong> Custom quote based on complexity, data and deliverables. We do not quote a fixed price without reviewing the scope.<br><br><strong>🏢 Enterprise:</strong> Custom proposal based on scope and agreed timelines.<br><br>Want a free quote?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
     pt: `Nossas tarifas se adaptam a cada projeto:<br><br><strong>🎓 Estudantes / Tese:</strong> De <strong>€45 a €500</strong> segundo a complexidade. Superamos qualquer oferta.<br><br><strong>🏢 Empresas:</strong> Proposta personalizada com resposta prioritária imediata.<br><br>Quer um orçamento gratuito?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
     fr: `Nos tarifs s'adaptent à chaque projet:<br><br><strong>🎓 Étudiants / Thèse:</strong> De <strong>45€ à 500€</strong> selon la complexité. Nous battons toute concurrence.<br><br><strong>🏢 Entreprises:</strong> Proposition personnalisée avec réponse prioritaire immédiate.<br><br>Devis gratuit?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
     de: `Unsere Preise passen sich jedem Projekt an:<br><br><strong>🎓 Studenten / Abschlussarbeit:</strong> Von <strong>45€ bis 500€</strong> je nach Umfang. Wir unterbieten jeden Mitbewerber.<br><br><strong>🏢 Unternehmen:</strong> Individuelles Angebot mit sofortiger Prioritätsantwort.<br><br>Kostenloses Angebot?<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">WhatsApp</a><a href="${VB_MAIL}" class="vb-cta vb-cta--mail">Email</a>`,
@@ -352,7 +352,7 @@ const VB_KB = [
   },
   {
     keys: ['tesis','tesina','tfg','tfm','thesis','dissertation','master','doctoral','academic','grado','posgrado','tese','thèse','arbeit','abschluss','tesi','论文','الأطروحة','диссертация'],
-    es: `Llevamos <strong>más de 20 años</strong> apoyando investigación académica en todo el mundo.<br><br>✔ Diseño metodológico<br>✔ Análisis con SPSS, R o Python<br>✔ Interpretación de resultados<br>✔ Tablas en formato APA<br><br>Desde <strong>€45</strong> · Entrega en plazo garantizado.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Cuéntanos tu proyecto</a>`,
+    es: `Llevamos <strong>más de 20 años</strong> apoyando investigación académica en todo el mundo.<br><br>✔ Diseño metodológico<br>✔ Análisis con SPSS, R o Python<br>✔ Interpretación de resultados<br>✔ Tablas en formato APA<br><br>Presupuesto personalizado según objetivos, datos y alcance del análisis.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Cuéntanos tu proyecto</a>`,
     en: `<strong>20+ years</strong> supporting academic research worldwide.<br><br>✔ Research design<br>✔ SPSS, R or Python analysis<br>✔ Results interpretation<br>✔ APA-formatted tables<br><br>From <strong>€45</strong> · On-time delivery guaranteed.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Tell us about your thesis</a>`,
     pt: `<strong>Mais de 20 anos</strong> apoiando pesquisa acadêmica em todo o mundo.<br><br>✔ Desenho metodológico<br>✔ Análise com SPSS, R ou Python<br>✔ Interpretação de resultados<br>✔ Tabelas em formato APA<br><br>A partir de <strong>€45</strong> · Entrega no prazo garantida.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Fale sobre seu projeto</a>`,
     fr: `<strong>Plus de 20 ans</strong> à soutenir la recherche académique dans le monde entier.<br><br>✔ Conception méthodologique<br>✔ Analyse avec SPSS, R ou Python<br>✔ Interprétation des résultats<br>✔ Tableaux au format APA<br><br>À partir de <strong>45€</strong> · Livraison dans les délais garantie.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Parlez-nous de votre projet</a>`,
@@ -376,8 +376,8 @@ const VB_KB = [
   },
   {
     keys: ['plazo','urgente','deadline','fast','delivery','entrega','cuanto tarda','horas','time','rapido','rápido','prazo','délai','frist','scadenza','时间','المواعيد','сроки'],
-    es: `Los plazos son críticos — lo entendemos perfectamente.<br><br>Trabajamos con <strong>respuesta y entrega prioritaria</strong> para proyectos urgentes.<br><br>Hemos entregado análisis completos en <strong>48 horas.</strong> Cuéntenos su plazo y lo hacemos posible.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Hablar de mi plazo</a>`,
-    en: `Deadlines are critical — we fully understand.<br><br>We handle <strong>priority delivery</strong> for urgent projects.<br><br>We've delivered complete analyses in <strong>48 hours.</strong> Tell us your deadline and we'll make it work.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Discuss my deadline</a>`,
+    es: `Los plazos son críticos — lo entendemos perfectamente.<br><br>Trabajamos con <strong>respuesta y entrega prioritaria</strong> para proyectos urgentes.<br><br>La viabilidad y el plazo se confirman después de revisar la base de datos, los objetivos y los entregables.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Hablar de mi plazo</a>`,
+    en: `Deadlines are critical — we fully understand.<br><br>We handle <strong>priority delivery</strong> for urgent projects.<br><br>Feasibility and delivery time are confirmed after reviewing the dataset, objectives and deliverables.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Discuss my deadline</a>`,
     pt: `Prazos são críticos — entendemos perfeitamente.<br><br>Trabalhamos com <strong>entrega prioritária</strong> para projetos urgentes.<br><br>Já entregamos análises completas em <strong>48 horas.</strong><br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Falar sobre meu prazo</a>`,
     fr: `Les délais sont critiques — nous comprenons parfaitement.<br><br>Nous travaillons avec <strong>livraison prioritaire</strong> pour les projets urgents.<br><br>Nous avons livré des analyses complètes en <strong>48 heures.</strong><br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Parler de mes délais</a>`,
     de: `Fristen sind kritisch — wir verstehen das vollkommen.<br><br>Wir arbeiten mit <strong>Prioritätslieferung</strong> für dringende Projekte.<br><br>Wir haben vollständige Analysen in <strong>48 Stunden</strong> geliefert.<br><a href="${VB_WA}" target="_blank" class="vb-cta vb-cta--wa">Frist besprechen</a>`,
